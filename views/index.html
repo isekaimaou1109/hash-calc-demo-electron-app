@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>HashCalc</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/all.css">
+  </head>
+  <body>
+    <!-- container -->
+    <div id="app">
+      <!-- header component -->
+      <div id="header">
+        <!-- item 1-->
+        <div class="item">
+          <p class="item-title">Data Format:</p>
+          <div class="type-container">
+            <span id="datatype-title">Data Format</span>
+            <i class="fas fa-chevron-circle-down"></i>
+          </div>
+          <div name="type" class="disappear" id="datatype">
+            <p class="datatype-item" value="file">File</p>
+            <p class="datatype-item" value="text">Text string</p>
+            <p class="datatype-item" value="hex">Hex string</p>
+          </div>
+        </div>
+
+        <!-- item 2 -->
+        <div class="item">
+          <p class="item-title">Data Format:</p>
+          <div class="input-container">
+            <input id="data-input" class="input" name="data" autocomplete="off" spellcheck="false" />
+            <i class="fas fa-bars styling"></i>
+          </div>
+        </div>
+
+        <!-- item 3 -->
+        <div class="item">
+          <input type="checkbox" id="hmac" name="hmac" value="hmac"/>
+          <label for="hmac">HMAC</label>
+        </div>
+
+        <!-- item 4 -->
+        <div class="item">
+          <!-- item 4-1 -->
+          <div class="item-4">
+            <p class="item-title">Key Format:</p>
+            <div class="type-container key-wrapper">
+              <span id="datatype-title-2" class="key-title">Key Format</span>
+              <i class="fas fa-chevron-circle-down"></i>
+            </div>
+
+            <div name="type" class="disappear key-datatype" id="datatype">
+              <p class="datatype-item">Text string</p>
+              <p class="datatype-item">Hex string</p>
+            </div>
+          </div>
+
+          <!-- item 4-2 -->
+          <div class="item-4-2">
+            <p class="item-title">Key</p>
+            <input id="key-input" class="input" name="data" autocomplete="off" spellcheck="false" />
+          </div>
+        </div>
+      </div>
+
+      <!-- body content -->
+      <div id="body">
+        <!-- hash 1 -->
+        <div class="item-hash">
+          <div class="checkbox">
+            <input class="checkbox-input" type="checkbox" id="md5" name="md5" value="md5"/>
+            <label for="md5">MD5</label>
+          </div>
+
+          <input autocomplete="off" spellcheck="false" class="input disabled" name="md5-hash"></input>
+        </div>
+
+        <!-- hash 2 -->
+        <div class="item-hash">
+          <div class="checkbox">
+            <input class="checkbox-input" type="checkbox" id="md4" name="md4" value="md4"/>
+            <label for="md4">MD4</label>
+          </div>
+
+          <input autocomplete="off" spellcheck="false" class="input disabled" name="md4-hash"></input>
+        </div>
+
+        <!-- hash 3 -->
+        <div class="item-hash">
+          <div class="checkbox">
+            <input class="checkbox-input" type="checkbox" id="sha1" name="sha1" value="sha1"/>
+            <label for="sha1">SHA1</label>
+          </div>
+
+          <input autocomplete="off" spellcheck="false" class="input disabled" name="sha1-hash"></input>
+        </div>
+
+        <!-- hash 4 -->
+        <div class="item-hash">
+          <div class="checkbox">
+            <input class="checkbox-input" type="checkbox" id="sha256" name="sha256" value="sha256"/>
+            <label for="sha256">SHA256</label>
+          </div>
+
+          <input autocomplete="off" spellcheck="false" class="input disabled" name="sha256-hash"></input>
+        </div>
+
+        <!-- hash 5 -->
+        <div class="item-hash">
+          <div class="checkbox">
+            <input class="checkbox-input" type="checkbox" id="sha384" name="sha384" value="sha384"/>
+            <label for="sha384">SHA384</label>
+          </div>
+
+          <input autocomplete="off" spellcheck="false" class="input disabled" name="sha384-hash"></input>
+        </div>
+
+        <!-- hash 6 -->
+        <div class="item-hash">
+          <div class="checkbox">
+            <input class="checkbox-input" type="checkbox" id="sha512" name="sha512" value="sha512"/>
+            <label for="sha512">SHA512</label>
+          </div>
+
+          <input autocomplete="off" spellcheck="false" class="input disabled" name="sha512-hash"></input>
+        </div>
+
+        <!-- hash 7 -->
+        <div class="item-hash">
+          <div class="checkbox">
+            <input class="checkbox-input" type="checkbox" id="ripemd160" name="ripemd160" value="ripemd160"/>
+            <label for="ripemd160">RIPEMD160</label>
+          </div>
+
+          <input autocomplete="off" spellcheck="false" class="input disabled" name="ripemd160-hash"></input>
+        </div>
+
+        <!-- hash 8 -->
+        <div class="item-hash">
+          <div class="checkbox">
+            <input class="checkbox-input" type="checkbox" id="panama" name="panama" value="panama"/>
+            <label for="panama">PANAMA</label>
+          </div>
+
+          <input autocomplete="off" spellcheck="false" class="input disabled" name="panama-hash"></input>
+        </div>
+
+        <!-- hash 9 -->
+        <div class="item-hash">
+          <div class="checkbox">
+            <input class="checkbox-input" type="checkbox" id="tiger" name="tiger" value="tiger"/>
+            <label for="tiger">TIGER</label>
+          </div>
+
+          <input autocomplete="off" spellcheck="false" class="input disabled" name="tiger-hash"></input>
+        </div>
+
+        <!-- hash 10 -->
+        <div class="item-hash">
+          <div class="checkbox">
+            <input class="checkbox-input" type="checkbox" id="md2" name="md2" value="md2"/>
+            <label for="md2">MD2</label>
+          </div>
+
+          <input autocomplete="off" spellcheck="false" class="input disabled" name="md2-hash"></input>
+        </div>
+
+        <!-- hash 11 -->
+        <div class="item-hash">
+          <div class="checkbox">
+            <input class="checkbox-input" type="checkbox" id="adler32" name="adler32" value="adler32"/>
+            <label for="adler32">ADLER32</label>
+          </div>
+
+          <input autocomplete="off" spellcheck="false" class="input disabled" name="adler32-hash"></input>
+        </div>
+
+        <!-- hash 12 -->
+        <div class="item-hash">
+          <div class="checkbox">
+            <input class="checkbox-input" type="checkbox" id="crc32" name="crc32" value="crc32"/>
+            <label for="crc32">CRC32</label>
+          </div>
+
+          <input autocomplete="off" spellcheck="false" class="input disabled" name="crc32-hash"></input>
+        </div>
+
+        <!-- hash 13 -->
+        <div class="item-hash">
+          <div class="checkbox">
+            <input class="checkbox-input" type="checkbox" id="ed2" name="ed2" value="ed2"/>
+            <label for="ed2">eDonkey/eMule</label>
+          </div>
+
+          <input autocomplete="off" spellcheck="false" class="input disabled" name="ed2-hash"></input>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <footer>
+        <!-- logo -->
+        <img src="../assets/avatar.jpg" alt="xx" />
+
+        <div class="btn-container">
+          <button class="btn" id="calculate">Calculate</button>
+          <button class="btn" id="close">Close</button>
+          <button class="btn" id="help">Help</button>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../renderer.js"></script>
+  </body>
+</html>
